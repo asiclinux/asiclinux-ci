@@ -16,12 +16,9 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <stdio.h>
-#include "./include/app.h"
-#include "./include/meta.h"
+#ifndef META_H
+#define META_H
 
+#define AUTHOR "Allexander Bergmans"         // The Code Author
 
-int main() {
-    printf("Author: %s\n", AUTHOR)
-    printf("TODO: %s\n", VERSION);
-}
+#endif // META_H
