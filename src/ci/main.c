@@ -17,11 +17,36 @@
  */
 
 #include <stdio.h>
+#include <time.h>
+#include <unistd.h>
 #include "./include/app.h"
 #include "./include/meta.h"
 
 
+
+
 int main() {
-    printf("Author: %s\n", AUTHOR)
+    time_t start_time, current_time;
+    double elapsed;
+
+    start_time = time(NULL);
+    if (start_time == ((time_t)-1)) {
+        printf("Error getting startup time.\n");
+    }
+
+    printf("System Started...\n");
+    printf("Author: %s\n", AUTHOR);
     printf("TODO: %s\n", VERSION);
+
+    // Simple simulation
+    for (int i = 0; i < 5; i++) {
+        sleep(1);
+        current_time = time(NULL);
+        elapsed = difftime(current_time, start_time);
+        printf("Elapsed time: %.0f seconds\n", elapsed);
+    }
+
+    current_time = time(NULL);
+    elapsed = difftime(current_time, start_time);
+    printf("System shutting down. Total uptime: %.0f seconds\n", elapsed);
 }
