@@ -3,6 +3,7 @@
 #include "./include/app.h"
 #include "./include/meta.h"
 #include "./include/time_utils.h"
+#include "./include/ci.h"
 
 int main() {
     // Initialize uptime
@@ -11,6 +12,7 @@ int main() {
     printf("System Started...\n");
     printf("Author: %s\n", AUTHOR);
     printf("Version: %s\n", VERSION);
+    ci_run();
 
     // Simple simulation
     for (int i = 0; i < 5; i++) {
