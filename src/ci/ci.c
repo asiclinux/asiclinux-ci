@@ -26,3 +26,8 @@ int ci_run(void) {
 
     return 0; // return 0 for success
 }
+
+int ci_stop(void) {
+    printf("CI Core Stopping\n");
+    // TODO: Implement logic
+}

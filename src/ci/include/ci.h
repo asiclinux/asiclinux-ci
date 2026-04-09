@@ -21,6 +21,7 @@ extern "C" {
 #endif
 
 int ci_run(void);
+int ci_stop(void);
 
 #ifdef __cplusplus
 }
