@@ -18,12 +18,15 @@
 
 
 #include "./include/ci.h"
+#include "./include/http.h"
 #include <stdio.h>
 
 int ci_run(void) {
     printf("CI run started!\n");
-    //TODO: Add logic
-
+    
+    struct Server server = server_Constructor(AF_INET, 80, SOCK_STREAM, 0, 10, INADDR_ANY, launch);
+    server.launch(&server);
+    
     return 0; // return 0 for success
 }
 

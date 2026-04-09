@@ -3,7 +3,6 @@
 #include "./include/conf.h"
 #include "./include/meta.h"
 #include "./include/time_utils.h"
-#include "./include/http.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -25,9 +24,7 @@ int main() {
 
   // return 0;
 
-    struct Server server = server_Constructor(AF_INET, 80, SOCK_STREAM, 0, 10, INADDR_ANY, launch);
-    server.launch(&server);
-    return 0;
+    ci_run();
 
 //   printf("System Started...\n");
 //   printf("Author: %s\n", AUTHOR);
