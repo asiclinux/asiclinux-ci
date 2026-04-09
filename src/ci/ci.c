@@ -30,4 +30,6 @@ int ci_run(void) {
 int ci_stop(void) {
     printf("CI Core Stopping\n");
     // TODO: Implement logic
+
+    return 0;
 }
