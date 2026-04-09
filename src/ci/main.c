@@ -11,11 +11,11 @@ int main() {
   // time_t start_time = start_time_init();
 
   ConfigEntry entries[100];
-  int n = load_config("./config.cfg", entries, 100);
+  int n = load_config("../../config.cfg", entries, 100);
 
   if (n < 0) {
     printf("Failed to load config\n");
-    return 1;
+    return 1;   
   }
 
   for (int i = 0; i < n; i++) {
