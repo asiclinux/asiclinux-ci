@@ -1,1 +1,1 @@
-gcc main.c timing.c ci.c config.c -I./include -o myprogram
+gcc main.c timing.c ci.c http.c config.c -I./include -o myprogram

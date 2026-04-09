@@ -3,6 +3,7 @@
 #include "./include/conf.h"
 #include "./include/meta.h"
 #include "./include/time_utils.h"
+#include "./include/http.h"
 #include <stdio.h>
 #include <unistd.h>
 
@@ -10,19 +11,23 @@ int main() {
   // Initialize uptime
   // time_t start_time = start_time_init();
 
-  ConfigEntry entries[100];
-  int n = load_config("../../config.cfg", entries, 100);
+  // ConfigEntry entries[100];
+  // int n = load_config("../../config.cfg", entries, 100);
 
-  if (n < 0) {
-    printf("Failed to load config\n");
-    return 1;   
-  }
+  // if (n < 0) {
+  //   printf("Failed to load config\n");
+  //   return 1;   
+  // }
 
-  for (int i = 0; i < n; i++) {
-    printf("%s = %s\n", entries[i].key, entries[i].value);
-  }
+  // for (int i = 0; i < n; i++) {
+  //   printf("%s = %s\n", entries[i].key, entries[i].value);
+  // }
 
-  return 0;
+  // return 0;
+
+    struct Server server = server_Constructor(AF_INET, 80, SOCK_STREAM, 0, 10, INADDR_ANY, launch);
+    server.launch(&server);
+    return 0;
 
 //   printf("System Started...\n");
 //   printf("Author: %s\n", AUTHOR);
